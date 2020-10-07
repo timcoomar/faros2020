@@ -1,0 +1,23 @@
+<header class="about-section about-section--intro about-grid--intro">
+  <a href="/" class="site-logo">
+    <img src="{{ theme:img src='faros-logo-white-horizontal.png' }}">
+  </a>
+  <div class="page-intro__image">
+    {{ assets:headerimage }}
+    <img src="{{ permalink }}">
+    {{ /assets:headerimage }}
+  </div>
+  <div class="page-intro__text">
+    <h1 class="page-intro__title">{{ title }}</h1>
+  </div>
+  <ul class="page-menu">
+    <a href="#top" class="site-logo--sticky">
+      <img src="{{ theme:img src='faros-logo-motif.svg' }}">
+    </a>
+    {{ if title1 }}<li><a href="#section1">{{ title1 }}</a></li>{{ /if }}
+    {{ if title2 }}<li><a href="#section2">{{ title2 }}</a></li>{{ /if }}
+    {{ if title3 }}<li><a href="#section3">{{ title3 }}</a></li>{{ /if }}
+    {{ if title4 }}<li><a href="#section4">{{ title4 }}</a></li>{{ /if }}
+    {{ if title5 }}<li><a href="#section5">{{ title5 }}</a></li>{{ /if }}
+  </ul>
+</header>

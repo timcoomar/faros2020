@@ -1,0 +1,126 @@
+/*** NAV ***/
+
+.nav-main {
+  padding-top: 1.8rem;
+}
+
+.site-menu--main { /* Container for main 'journey' menu */
+  position:   fixed;
+  z-index:    99999;
+  width:      100vw;
+  height:     100vh;
+  top:        0;
+  left:       0;
+  z-index:    10;
+  background: white;
+  display:    flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(200vw); 
+  transition: transform .4s;
+}
+
+  .site-menu--main.open {
+    transform: translateX(0); 
+  }
+
+#site-menu__svg {
+  max-width:    97vw;
+  max-height:   95vh;
+}
+
+#site-menu__svg text {
+    cursor:         default;
+    font-weight:    700;
+}
+
+#site-menu__svg .menu-link:hover text,
+#site-menu__svg .menu-link:hover circle {
+    cursor: pointer;
+}
+
+[id*="circle-outer-"] {
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#site-menu__svg .menu-link text:hover ~ [id*="circle-outer-"] {
+    opacity: 1;
+}
+
+[id*="circle-outer-"]:hover {
+    opacity: 1;
+}
+
+/*** SITE MENU - MOBILE ***/
+
+.site-menu--mobile {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .site-menu--main {
+    display: none;
+  }
+  .site-menu--mobile {
+    display:            flex;
+    flex-direction:     column;
+    position:           fixed;
+    transform:          translateX(100vw);
+    transition:         transform .4s ease-in-out;
+    top:                0;
+    left:               0;
+    width:              100vw;
+    height:             100vh;
+    z-index:            10;
+    background:         white;
+    margin:             0;
+    list-style:         none;
+    text-align:         right;
+    padding-top:        6.5rem;
+    padding-right:      1.5rem;
+  }
+  .site-menu--mobile.open {
+    transform:          translateX(0);
+  }
+
+  .site-menu--mobile > li > a {
+    font-size:          3.5rem;
+    font-weight:        700;
+    color:              var(--faros-darkblue);
+    padding:            .4rem 0;
+    display:            block;
+    text-transform:     lowercase;
+  }
+  .site-menu--mobile > img {
+    position:           fixed;
+    top:                1.7rem;
+    left:               1.8rem;
+    width:              12%;
+  }
+
+  .nav-main {
+    display: none;
+  }
+  
+  .grid-home,
+  .grid-page {
+    display:               grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:    100vh auto auto;
+    grid-template-areas:   "intro"
+                           "main"
+                           "footer"
+  }
+  figure.home-header__images,
+  figure.home-header__images > .swiper-container {
+    width:  100%;
+  }
+  [class*="section--main__"]:not(.full-width) {
+    padding: 4rem 3rem !important;
+  }
+  [class*="section--main__"] span {
+    padding-left: 0 !important;
+  }
+
+}

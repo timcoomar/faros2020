@@ -1,0 +1,128 @@
+{{ partial:menu_main }}
+
+<div class="grid-page" id="top"> 
+
+  <nav class="nav-main home-section--nav home-grid--nav">
+    <!-- {{ partial:svg_journey }} -->
+  </nav>
+
+  {{ partial:page_sticky_header }}
+
+  <main class="main-about">
+
+    {{ if content1 }}
+
+    <article id="section1">
+      <p class="area-heading">About</p>
+      <div class="grid-content">
+        <h2 class="main-title">{{ title1 }}</h2>
+        <div class="area-content">
+          {{ content1 | markdown }}
+        </div>
+      </div>
+    </article>
+
+    <div class="divider"></div>
+
+    {{ /if }}
+
+    {{ if content2 }}
+
+    <article id="section2">
+      <div class="grid-content">
+        <h2 class="main-title">{{ title2 }}</h2>
+        <div class="area-content">
+          {{ content2 | markdown }}
+        </div>
+      </div>
+    </article>
+
+    <div class="divider"></div>
+
+    {{ /if }}
+
+    {{ if content3 }}
+
+      <article id="section3">
+        <div class="grid-content">
+          <h2 class="main-title">{{ title3 }}</h2>
+          <div class="area-content">
+            {{ content3 | markdown }}
+          </div>
+        </div>
+      </article>
+
+    <div class="divider"></div>
+
+    {{ /if }}
+
+    {{ if content4 }}
+
+    <article id="section4">
+      <h2 class="main-title">{{ title4 }}</h2>
+      <div class="section-summary">
+        {{ content4 | markdown }}
+      </div>
+      <div class="grid-reports">
+        <ul>
+          <h4>Annual</h4>
+          {{ annualreports }}
+          <li>
+            <a href="{{ assets:reportfile }} {{ url }} {{ /assets:reportfile }}">
+              {{ reporttitle }}
+            </a>
+          </li>
+          {{ /annualreports }}
+        </ul>
+        <ul>
+          <h4>Financial</h4>
+          {{ financialreports }}
+          <li>
+            <a href="{{ assets:reportfile }} {{ url }} {{ /assets:reportfile }}">
+              {{ reporttitle }}
+            </a>
+          </li>
+          {{ /financialreports }}
+        </ul>
+        <ul>
+          <h4>Statutes</h4>
+          {{ statements }}
+          <li>
+            <a href="{{ assets:reportfile }} {{ url }} {{ /assets:reportfile }}">
+              {{ reporttitle }}
+            </a>
+          </li>
+          {{ /statements }}
+        </ul>
+      </div>
+    </article>
+
+    <div class="divider"></div>
+
+    {{ /if }}
+
+    
+
+    <article id="section5">
+      <h2 class="main-title">{{ title5 }}</h2>
+      <div class="videos-carousel">
+        {{ videos }}
+        <div class="section-summary">
+          <iframe src="{{ video:url | video_embed }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        {{ /videos }}
+      </div>
+      
+    </article>
+
+
+  </main>
+
+  {{ partial:footer_nomap }}
+
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+<script src="{{ theme:js src='site-home.js' }}"></script>
+{{ partial:sticky-js }}

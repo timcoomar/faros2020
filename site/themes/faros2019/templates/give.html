@@ -1,0 +1,52 @@
+{{ partial:menu_main }}
+
+<div class="grid-page no-dot" id="top"> 
+
+  <nav class="nav-main home-section--nav home-grid--nav">
+    {{ partial:svg_journey }}
+  </nav>
+
+  <header class="page-header--generic page-header--nomenu" id="page-header--nomenu">
+    <a href="/" class="site-logo">
+      {{ theme:img src="faros-logo-white-horizontal.png" tag="true" }}
+    </a>
+    <div class="page-intro__image">
+        {{ assets:headerimage }}
+        <img src="{{ permalink }}">
+      {{ /assets:headerimage }}
+    </div>
+    <div class="page-intro__text">
+      <h1 class="page-intro__title">{{ title }}</h1>
+    </div>
+  </header>
+
+  <main class="about-section about-grid--main">
+
+      <section class="section-a--give">
+        <header class="section-a__header"><span>{{ auxtitle }}</span></header>
+        <h2 class="section-a__title">{{ title1 }}</h2>
+        <article class="section-a__text">
+            {{ content1 | markdown }}
+        </article>
+        <aside class="give-areas">
+          <div class="give-areas__paypal">
+            <h3>PayPal</h3>
+            <p>By clicking the button below, you will be transferred to Paypal's webpage</p>
+            {{ if htmlcontent }} {{ htmlcontent }} {{ /if }}
+          </div>
+          <div class="give-areas__bank">
+            <h3>Bank Transfer</h3>
+            {{ content2 | markdown }}
+            {{ theme:img src="logo-alphabank.svg" tag="true" }}
+          </div>
+        </aside>
+      </section>      
+
+    </main>
+
+    {{ partial:footer_nomap }}
+    
+</div> <!-- end grid-page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ theme:js src='site-home.js' }}"></script>

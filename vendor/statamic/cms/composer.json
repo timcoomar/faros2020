@@ -1,0 +1,68 @@
+{
+    "name": "statamic/cms",
+    "description": "The Statamic CMS Core Package",
+    "keywords": [
+        "statamic",
+        "cms",
+        "flat file",
+        "laravel"
+    ],
+    "license": "proprietary",
+    "require": {
+        "composer/composer": "^1.10",
+        "facade/ignition-contracts": "^1.0",
+        "guzzlehttp/guzzle": "^6.3 || ^7.0",
+        "laravel/framework": "^6.0 || ^7.0 || ^8.0",
+        "laravel/helpers": "^1.1",
+        "league/commonmark": "^1.5",
+        "league/csv": "^9.0",
+        "league/glide": "^1.1",
+        "pixelfear/composer-dist-plugin": "^0.1.0",
+        "spatie/blink": "^1.1.2",
+        "statamic/stringy": "^3.1",
+        "symfony/var-exporter": "^4.3",
+        "symfony/yaml": "^4.1 || ^5.1",
+        "ueberdosis/html-to-prosemirror": "^1.0",
+        "ueberdosis/prosemirror-to-html": "^2.0",
+        "wilderborn/partyline": "^1.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "google/cloud-translate": "^1.6",
+        "mockery/mockery": "^1.2.3",
+        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "download-dist": {
+            "url": "https://github.com/statamic/cms/releases/download/{$version}/dist.tar.gz",
+            "path": "resources/dist"
+        },
+        "laravel": {
+            "providers": [
+                "Statamic\\Providers\\StatamicServiceProvider"
+            ],
+            "aliases": {
+                "Statamic": "Statamic\\Statamic"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Statamic\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests",
+            "Foo\\Bar\\": "tests/fixtures/Addon"
+        }
+    }
+}

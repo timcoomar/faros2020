@@ -1,0 +1,62 @@
+{{ partial:menu_main }}
+
+<div class="grid-page grid-page--news" id="top">
+
+  <header class="page-header--generic">
+    <a href="/" class="site-logo">
+      {{ theme:img src="faros-logo-white-horizontal.png" tag="true" }}
+    </a>
+    <div class="page-intro__image page-intro__image--newspost">
+      {{ if image }}
+          <img src="{{ image }}">
+      {{ /if }}
+    </div>
+    <div class="page-intro__text page-intro__text--newspost">
+      <h1 class="page-intro__title">news</h1>
+    </div>
+  </header>
+
+  <main class="about-section about-grid--main">
+
+    <article class="singlenews__article">
+      <date class="area-heading">
+        {{ newsdate format="j F 'y" }}
+      </date>
+      <h3 class="main-title">
+        {{ title }}
+      </h3>
+      <section class="grid-singlenews">
+        <div class="singlenews__tags">
+          <h5 class="singlenews__tags-title">Tags</h5>
+          {{ tags }}
+            <a>{{ title }}</a><br>
+          {{ /tags }}
+        </div>
+        <div class="singlenews__content">
+          {{ content }}
+          <ul class="singlenews__files">
+            {{ fileupload }}
+              <li><a data-lightbox-type="iframe" class="lightbox" aria-haspopup="dialog" href="{{ assets:pdf }} {{ url }} {{ /assets:pdf }}">{{ filetitle }}</a></li>
+            {{ /fileupload }}
+          </ul>
+        </div>
+      </section>
+
+      <a class="back-to" href="{{ link to='news' }}">Back to news</a>
+
+    </article>
+
+  </main>
+
+  {{ partial:footer_nomap }}
+
+</div> <!-- end grid-page -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ theme:js src='site-home.js' }}"></script>
+<script src="{{ theme:js src='topbox.js' }}"></script>
+<script>
+	$(document).ready(function() {
+		$('.lightbox').topbox();
+	});
+</script>

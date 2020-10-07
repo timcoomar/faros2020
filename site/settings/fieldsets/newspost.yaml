@@ -1,0 +1,46 @@
+sections:
+  main:
+    display: Main
+    fields:
+      shorttitle:
+        type: char_field
+        display: Short Title (40)
+        hard_limit: 40
+      image:
+        container: main
+        folder: /
+        restrict: false
+        max_files: 1
+        type: assets
+        display: Image
+      teaser:
+        input_type: textarea
+        type: char_field
+        display: Preview Content (250)
+        hard_limit: 250
+      content:
+        cheatsheet: false
+        restrict_assets: false
+        type: markdown
+        display: Content
+      newsdate:
+        allow_blank: false
+        allow_time: true
+        require_time: false
+        earliest_date: 'January 1, 1900'
+        type: date
+        display: Date
+      fileupload:
+        type:       grid
+        display:    File Upload
+        fields:
+          filetitle:
+            display:  File name
+            type:     text
+          pdf:
+            display:    News Post pdf
+            type:       assets
+            container:  files
+            validate:   "ext:pdf"
+taxonomies: true
+title: 'News Post'

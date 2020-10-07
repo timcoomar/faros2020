@@ -1,0 +1,88 @@
+{{ partial:menu_main }}
+
+<div class="grid-page" id="top"> 
+
+  <nav class="nav-main home-section--nav home-grid--nav">
+    <!--{{ partial:svg_journey }}-->
+  </nav>
+
+  <header class="page-header--generic page-header--nomenu" id="page-header--nomenu">
+    <a href="/" class="site-logo">
+      {{ theme:img src="faros-logo-white-horizontal.png" tag="true" }}
+    </a>
+    <div class="page-intro__image">
+      {{ assets:headerimage }}
+        <img src="{{ permalink }}">
+      {{ /assets:headerimage }}
+    </div>
+    <div class="page-intro__text">
+      <h1 class="page-intro__title">{{ title }}</h1>
+    </div>
+  </header>
+
+  <main class="about-section about-grid--main main-projects">
+
+    <p class="area-heading">
+      Our Partners  
+    </p>
+
+    <h2 class="main-title">{{ project_1_title }}</h2>
+
+    {{ if project_1_summary }}
+      <article class="section-summary">
+        {{ project_1_summary | markdownFilter }}
+      </article>
+    {{ /if }}
+
+    <section class="project-list">
+      {{ project_1_items }}
+        <article class="project-item">
+          {{ if project_1_text }}
+            <figure class="project-item__image">
+              {{ project_1_image | image }}
+            </figure>
+            <div class="project-item__text">
+              {{ project_1_text }}
+            </div>
+          {{ else }}
+            {{ project_1_image | image }}
+          {{ /if }}
+        </article>
+      {{ /project_1_items }}
+    </section>
+
+    <div class="divider"></div>
+
+    <h2 class="main-title">{{ project_2_title }}</h2>
+
+    {{ if project_2_summary }}
+      <article class="section-summary">
+        {{ project_2_summary | markdownFilter }}
+      </article>
+    {{ /if }}
+
+    <section class="project-list">
+      {{ project_2_items }}
+        <article class="project-item">
+          {{ if project_2_text }}
+            <figure class="project-item__image">
+              {{ project_2_image | image }}
+            </figure>
+            <div class="project-item__text">
+              {{ project_2_text }}
+            </div>
+          {{ else }}
+            {{ project_2_image | image }}
+          {{ /if }}
+        </article>
+      {{ /project_2_items }}
+    </section>
+
+  </main>
+
+  {{ partial:footer_nomap }}
+
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ theme:js src='site-home.js' }}"></script>
